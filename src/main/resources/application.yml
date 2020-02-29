@@ -1,0 +1,16 @@
+#server:
+#  #端口号
+#  port: 8083
+
+#eureka:
+#  client:
+#    service-url:
+#      defaultZone: http://localhost:8761/eureka/  # 指定注册中心的url
+#    register-with-eureka: false  # 指定不进行注册操作，默认为true，若进行注册的话，会显示在Eureka信息面板上
+#  server:
+#    enable-self-preservation: false  # 禁用eureka server的自我保护机制，建议在生产环境下打开此配置
+#spring:
+#  application:
+#    name: eureka  # 指定应用的名称
+server:
+  port: 8888  # 指定项目的端口号
