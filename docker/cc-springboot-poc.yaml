@@ -1,0 +1,32 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: cc-springboot-poc
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: cc-springboot-poc
+  template:
+    metadata:
+      labels:
+        app: cc-springboot-poc
+    spec:
+      nodeSelector:
+        "kubernetes.io/os": linux
+      containers:
+        - name: cc-springboot-poc-container
+          image: huangfulibo/cc-springboot-poc:0.0.1
+          ports:
+            - containerPort: 8080
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: cc-springboot-poc
+spec:
+  type: LoadBalancer
+  ports:
+    - port: 8080
+  selector:
+    app: cc-springboot-poc
