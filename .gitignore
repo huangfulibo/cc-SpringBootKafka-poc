@@ -1,6 +1,8 @@
 # maven ignore
 target/
-
+gradle/
+gradlew
+gradlew.bat
 # gradle ignore
 .gradle/
 out/
